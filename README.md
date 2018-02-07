@@ -1,8 +1,8 @@
 # Ansible Role: Git
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-git.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-git)
+[![Build Status](https://github.com/faktiva/ansible-role-faktiva-vim-config.git?branch=master)](https://travis-ci.org/faktiva/ansible-role-faktiva-vim-config)
 
-Installs Git, a distributed version control system, on any RHEL/CentOS or Debian/Ubuntu Linux system.
+Installs [faktiva/vim-config](https://github.com/faktiva/vim-config.git), a set of pre-configured VIM plugins that makes devs, devops and sysadmins life happier.
 
 ## Requirements
 
@@ -12,29 +12,9 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    workspace: /root
-
-Where certain files will be downloaded and adjusted prior to git installation, if needed.
-
-    git_enablerepo: ""
-
-This variable, a well as `git_packages`, will be used to install git via a particular `yum` repo if `git_install_from_source` is false (CentOS only). Any additional repositories you have installed that you would like to use for a newer/different Git version.
-
-    git_packages:
-      - git
-      - git-svn
-
-The specific Git packages that will be installed. By default, `git-svn` is included, but you can easily add this variable to your playbook's variables and remove `git-svn` if desired.
-
-    git_install_from_source: false
-    git_install_path: "/usr"
-    git_version: "2.1.0"
-
-Whether to install Git from source; if set to `true`, `git_version` is required and will be used to install a particular version of git (see all available versions here: https://www.kernel.org/pub/software/scm/git/), and `git_install_path` defines where git should be installed.
-
-    git_install_from_source_force_update: false
-
-If git is already installed at and older version, force a new source build. Only applies if `git_install_from_source` is `true`.
+    users:
+      - root
+      - foobar
 
 ## Dependencies
 
@@ -44,12 +24,12 @@ None.
 
     - hosts: servers
       roles:
-        - { role: geerlingguy.git }
+        - { role: faktiva.faktiva-vim-config }
 
 ## License
 
-MIT / BSD
+MIT
 
 ## Author Information
 
-This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+This role was created in 2018 by [Emiliano Gabrielli](https://github.com/drAlberT).

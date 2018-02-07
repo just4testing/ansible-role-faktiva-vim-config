@@ -2,24 +2,16 @@
 dependencies: []
 
 galaxy_info:
-  author: geerlingguy
-  description: Git version control software
-  company: "Midwestern Mac, LLC"
-  license: "license (BSD, MIT)"
+  author: faktiva
+  description: Installs "faktiva/vim-config" vim configuration package
+  company: "Faktiva"
+  license: "license (MIT)"
   min_ansible_version: 2.2
   platforms:
-  - name: EL
-    versions:
-    - all
-  - name: Fedora
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - all
-  - name: Ubuntu
-    versions:
-    - all
+    - name: Ubuntu
+      versions:
+      - all
   galaxy_tags:
     - development
-    - system
+    - vim
+    - vimrc
